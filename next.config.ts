@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
     assetPrefix: "/taabohdss/",
     images: { unoptimized: true },
     trailingSlash: true,
+    skipTrailingSlashRedirect: true,
   }),
   
   // Configuration commune pour développement
