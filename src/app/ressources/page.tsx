@@ -204,7 +204,7 @@ export default function ResourcesPage() {
                 : 'Contact us for help finding the resources you need.'}
             </p>
             <Button size="lg" asChild>
-              <a href="/contact">
+              <a href="/contact/">
                 {language === 'fr' ? 'Nous contacter' : 'Contact us'}
               </a>
             </Button>

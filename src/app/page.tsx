@@ -85,13 +85,13 @@ export default function HomePage() {
               {t('hero.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Link href="/a-propos">
+              <Link href="/a-propos/">
                 <Button size="lg" className="text-base">
                   {t('hero.cta')}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/contact/">
                 <Button size="lg" variant="outline" className="text-base">
                   {t('nav.contact')}
                 </Button>
@@ -190,7 +190,7 @@ export default function HomePage() {
             </div>
 
             <div className="text-center mt-8">
-              <Link href="/a-propos">
+              <Link href="/a-propos/">
                 <Button size="lg" variant="outline">
                   {language === 'fr' ? 'En savoir plus' : 'Learn More'}
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -212,7 +212,7 @@ export default function HomePage() {
                   {language === 'fr' ? 'Dernières actualités et annonces' : 'Latest news and announcements'}
                 </p>
               </div>
-              <Link href="/actualites">
+              <Link href="/actualites/">
                 <Button variant="ghost">
                   {language === 'fr' ? 'Voir tout' : 'View All'}
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -245,7 +245,7 @@ export default function HomePage() {
                     <p className="text-sm text-muted-foreground line-clamp-3 mb-4">
                       {news.excerpt[language]}
                     </p>
-                    <Link href="/actualites">
+                    <Link href="/actualites/">
                       <Button variant="ghost" size="sm" className="w-full">
                         {language === 'fr' ? 'Lire la suite' : 'Read More'}
                       </Button>
@@ -305,7 +305,7 @@ export default function HomePage() {
             </div>
 
             <div className="text-center mt-8">
-              <Link href="/ressources">
+              <Link href="/ressources/">
                 <Button size="lg">
                   {language === 'fr' ? 'Voir toutes les ressources' : 'View All Resources'}
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -331,12 +331,12 @@ export default function HomePage() {
                 : 'Contact us to learn more about our research projects or explore collaborations.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Link href="/contact">
+              <Link href="/contact/">
                 <Button size="lg" variant="secondary" className="text-base">
                   {t('nav.contact')}
                 </Button>
               </Link>
-              <Link href="/partenaires">
+              <Link href="/partenaires/">
                 <Button size="lg" variant="outline" className="text-base bg-transparent border-white text-white hover:bg-white/10">
                   {t('nav.partners')}
                 </Button>

@@ -8,15 +8,15 @@ import { useLanguage } from '@/components/LanguageProvider'
 
 const navigation = [
   { href: '/', key: 'home' },
-  { href: '/a-propos', key: 'about' },
-  { href: '/zone-etude', key: 'studyArea' },
-  { href: '/recherche', key: 'research' },
-  { href: '/ressources', key: 'resources' },
-  { href: '/equipe', key: 'team' },
-  { href: '/partenaires', key: 'partners' },
-  { href: '/actualites', key: 'news' },
-  { href: '/appels-candidatures', key: 'calls' },
-  { href: '/contact', key: 'contact' },
+  { href: '/a-propos/', key: 'about' },
+  { href: '/zone-etude/', key: 'studyArea' },
+  { href: '/recherche/', key: 'research' },
+  { href: '/ressources/', key: 'resources' },
+  { href: '/equipe/', key: 'team' },
+  { href: '/partenaires/', key: 'partners' },
+  { href: '/actualites/', key: 'news' },
+  { href: '/appels-candidatures/', key: 'calls' },
+  { href: '/contact/', key: 'contact' },
 ]
 
 export function Header() {
@@ -66,7 +66,7 @@ export function Header() {
             </span>
           </button>
 
-          <Link href="/contact">
+          <Link href="/contact/">
             <span className="hidden sm:inline-flex px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors cursor-pointer">
               {t('nav.contact')}
             </span>
@@ -99,7 +99,7 @@ export function Header() {
                     <span>{language === 'fr' ? 'English' : 'Français'}</span>
                   </button>
                 </div>
-                <Link href="/contact">
+                <Link href="/contact/">
                   <span className="flex items-center justify-center w-full px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors cursor-pointer">
                     {t('nav.contact')}
                   </span>

@@ -5,12 +5,12 @@ import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'luc
 import { useLanguage } from '@/components/LanguageProvider'
 
 const quickLinks = [
-  { href: '/a-propos', key: 'nav.about' },
-  { href: '/zone-etude', key: 'nav.studyArea' },
-  { href: '/recherche', key: 'nav.research' },
-  { href: '/ressources', key: 'nav.resources' },
-  { href: '/equipe', key: 'nav.team' },
-  { href: '/actualites', key: 'nav.news' },
+  { href: '/a-propos/', key: 'nav.about' },
+  { href: '/zone-etude/', key: 'nav.studyArea' },
+  { href: '/recherche/', key: 'nav.research' },
+  { href: '/ressources/', key: 'nav.resources' },
+  { href: '/equipe/', key: 'nav.team' },
+  { href: '/actualites/', key: 'nav.news' },
 ]
 
 export function Footer() {
@@ -119,10 +119,10 @@ export function Footer() {
             © {new Date().getFullYear()} Taabo HDSS. {t('footer.rights')}
           </p>
           <div className="flex space-x-6 text-sm">
-            <Link href="/mentions-legales" className="text-muted-foreground hover:text-primary">
+            <Link href="/mentions-legales/" className="text-muted-foreground hover:text-primary">
               Mentions légales
             </Link>
-            <Link href="/politique-confidentialite" className="text-muted-foreground hover:text-primary">
+            <Link href="/politique-confidentialite/" className="text-muted-foreground hover:text-primary">
               Politique de confidentialité
             </Link>
           </div>
