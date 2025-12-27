@@ -245,7 +245,7 @@ export default function HomePage() {
                     <p className="text-sm text-muted-foreground line-clamp-3 mb-4">
                       {news.excerpt[language]}
                     </p>
-                    <Link href={`/actualites/${news.id}`}>
+                    <Link href="/actualites">
                       <Button variant="ghost" size="sm" className="w-full">
                         {language === 'fr' ? 'Lire la suite' : 'Read More'}
                       </Button>

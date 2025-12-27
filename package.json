@@ -4,22 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3000",
-    
-    
     "build": "next build && xcopy /E /I .next\\static .next\\standalone\\.next\\static && xcopy /E /I public .next\\standalone\\public",
     "build:static": "set GITHUB_ACTIONS=true && next build",
-    
     "start": "set NODE_ENV=production && bun .next\\standalone\\server.js 2>&1 | tee server.log",
     "lint": "next lint",
-    
-    
     "predeploy": "npm run build:static",
-    "deploy": "if not exist out mkdir out && echo. > out\\.nojekyll && npx gh-pages -d out -t",
+    "deploy": "if not exist out mkdir out && echo. > out\\.nojekyll && xcopy /E /I .next\\static out\\ && xcopy /E /I public out\\public && npx gh-pages -d out -t",
     "deploy:clean": "if exist out rmdir /s /q out && npm run deploy",
-    "deploy:ci": "set GITHUB_ACTIONS=true && npm run build:static && if not exist out mkdir out && echo. > out\\.nojekyll && npx gh-pages -d out -t",
-    "deploy:win": "powershell -ExecutionPolicy Bypass -File deploy.ps1",
-    
-    
+    "deploy:ci": "set GITHUB_ACTIONS=true && npm run build:static && if not exist out mkdir out && echo. > out\\.nojekyll && xcopy /E /I .next\\static out\\ && xcopy /E /I public out\\public && npx gh-pages -d out -t",
+    "deploy:win": "powershell -ExecutionPolicy Bypass -File fix-deploy.ps1",
     "db:push": "prisma db push",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",

@@ -1,0 +1,82 @@
+{
+  "name": "Taabo HDSS",
+  "description": "Site institutionnel du Taabo Health and Demographic Surveillance System - Côte d'Ivoire",
+  "url": "https://gloireseigneurj-alt.github.io/taabohdss",
+  "homepage": "https://github.com/gloireseigneurj-alt/taabohdss",
+  "version": "1.0.0",
+  "author": {
+    "name": "Taabo HDSS Team",
+    "url": "https://taabohdss.ci"
+  },
+  "keywords": [
+    "taabo",
+    "hdss",
+    "health",
+    "demographic",
+    "surveillance",
+    "côte d'ivoire",
+    "research",
+    "next.js",
+    "react",
+    "tailwindcss"
+  ],
+  "license": "MIT",
+  "type": "website",
+  "technologies": [
+    "Next.js 15",
+    "React 19",
+    "TypeScript 5",
+    "Tailwind CSS 4",
+    "shadcn/ui",
+    "Prisma",
+    "GitHub Pages"
+  ],
+  "features": [
+    "Export statique pour GitHub Pages",
+    "Multilingue (FR/EN)",
+    "Responsive design",
+    "TypeScript",
+    "Tailwind CSS",
+    "Dark mode ready",
+    "SEO optimisé",
+    "CI/CD avec GitHub Actions"
+  ],
+  "pages": {
+    "/": "Accueil",
+    "/a-propos": "À Propos",
+    "/actualites": "Actualités",
+    "/appels-candidatures": "Appels à Candidatures",
+    "/contact": "Contact",
+    "/equipe": "Équipe",
+    "/mentions-legales": "Mentions Légales",
+    "/partenaires": "Partenaires",
+    "/politique-confidentialite": "Politique de Confidentialité",
+    "/recherche": "Recherche",
+    "/ressources": "Ressources",
+    "/zone-etude": "Zone d'Étude"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gloireseigneurj-alt/taabohdss.git"
+  },
+  "deploymentInfo": {
+    "platform": "GitHub Pages",
+    "branch": "gh-pages",
+    "url": "https://gloireseigneurj-alt.github.io/taabohdss/",
+    "basePath": "/taabohdss",
+    "exportMode": true
+  },
+  "institution": {
+    "name": "Centre Suisse de Recherches Scientifiques en Côte d'Ivoire (CSRS)",
+    "address": "08 BP 841 Abidjan 08, Côte d'Ivoire",
+    "email": "info@taabohdss.ci",
+    "website": "https://taabohdss.ci"
+  },
+  "project": {
+    "founded": "2009",
+    "households": "12,500+",
+    "population": "75,000+",
+    "publications": "150+",
+    "yearsOfSurveillance": "15+"
+  }
+}
