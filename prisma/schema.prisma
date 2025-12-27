@@ -1,0 +1,148 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Users - Admin users for content management
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  password     String
+  name         String?
+  role         String   @default("admin")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+// Pages - Static pages content
+model Page {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  titleFr     String
+  titleEn     String
+  contentFr   String
+  contentEn   String
+  published   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// News - News and announcements
+model News {
+  id            String   @id @default(cuid())
+  slug          String   @unique
+  titleFr       String
+  titleEn       String
+  excerptFr     String?
+  excerptEn     String?
+  contentFr     String
+  contentEn     String
+  category      String?  @default("general")
+  imageUrl      String?
+  publishedAt   DateTime?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+// Resources - Policy briefs, reports, documents, articles
+model Resource {
+  id            String   @id @default(cuid())
+  slug          String   @unique
+  titleFr       String
+  titleEn       String
+  descriptionFr String?
+  descriptionEn String?
+  type          String   // policy_brief, report, data, article, protocol, guide
+  fileUrl       String
+  fileSize      Int?
+  year          Int?
+  category      String?
+  language      String   @default("fr")
+  downloadsCount Int    @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+// Team - Staff members
+model TeamMember {
+  id          String   @id @default(cuid())
+  name        String
+  positionFr  String?
+  positionEn  String?
+  bioFr       String?
+  bioEn       String?
+  photoUrl    String?
+  category    String?  // direction, researcher, technical, admin
+  email       String?
+  linkedin    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Partners - Institutional and international partners
+model Partner {
+  id              String   @id @default(cuid())
+  name            String
+  descriptionFr   String?
+  descriptionEn   String?
+  logoUrl         String?
+  website         String?
+  type            String   // institutional, international, local, funding
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+// Projects - Research projects
+model Project {
+  id            String   @id @default(cuid())
+  slug          String   @unique
+  titleFr       String
+  titleEn       String
+  descriptionFr String?
+  descriptionEn String?
+  domain        String   // infectious_disease, non_transmissible, interventions, social
+  startDate     DateTime?
+  endDate       DateTime?
+  status        String   @default("ongoing") // ongoing, completed
+  imageUrl      String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+// Calls - Calls for applications and projects
+model Call {
+  id            String   @id @default(cuid())
+  slug          String   @unique
+  titleFr       String
+  titleEn       String
+  descriptionFr String?
+  descriptionEn String?
+  type          String   // job, internship, project, funding
+  fileUrl       String?
+  deadline      DateTime?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+// Contact Messages
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String?
+  message   String
+  type      String?  // general, partnership, research, press
+  status    String   @default("unread") // unread, read, replied
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
